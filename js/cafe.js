@@ -33,5 +33,5 @@ $(document).ready(function(){ //function 內的內容會在整個原始黨載入
     $('input[type="checkbox"]').change(function(){
         refreshList();
     });
-    
+    //test 2
 });
