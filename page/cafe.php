@@ -24,7 +24,9 @@
             <div style="float:left;" id="all-cafe">
                 <br><br><br>
                 <?php 
+                //hihi
                 //我故意的
+		      
                 ?>
             </div>
            
