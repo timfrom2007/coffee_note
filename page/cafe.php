@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+﻿<?php session_start(); ?>
 <?php include("Mysql_util.php"); ?>
 <?php $wifi=0; $electronic=0; $plug=0;?>
 <html>
@@ -24,7 +24,6 @@
             <div style="float:left;" id="all-cafe">
                 <br><br><br>
                 <?php 
-                    //我是測試
                 ?>
             </div>
            
