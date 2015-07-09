@@ -4,8 +4,23 @@ function refreshList(){
         //var name = $(this).attr('name'); //取自己的 name
         var data = new Object(), allCheckBoxes = $('input[type="checkbox"]'), curCheck = null;
         for( var i=0 ; i<allCheckBoxes.length ; i+=1 ){
-            curCheck = allCheckBoxes.eq(i)
+            curCheck = allCheckBoxes.eq(i);
             data[curCheck.attr('name')] = curCheck.prop('checked');
+            // <a id='i_dont_know' href='/hi.php' >I am content</a>
+            var hr = $('#i_dont_know').attr('href'); //取出 /hi.php, 等於 $('#i_dont_know').prop('href')
+            var id = $('#i_dont_know').attr('id'); //取出 i_dont_know 等於 $('#i_dont_know').prop('id')
+            
+            // <input id='check' type='checkbox' checked />
+            var check = $('#check').attr('checked'); //空的
+            // <input id='check' type='checkbox' checked='checked' />
+            var check = $('#check').attr('checked'); //取出 checked
+            //var check = $('#check').attr('checked', 'checked'); //設定他為 checked
+            //var check = $('#check').attr('checked', ''); //取消設定 checked 不確定
+            
+            var check = $('#check').prop('checked'); //上面兩種都可用，而且回傳 true v
+            var check = $('#check').prop('checked', true); //設定他 check v
+            var check = $('#check').prop('checked', false); //設定他不 check v
+            
         }
         
         //var data = new Object();
@@ -31,6 +46,8 @@ function refreshList(){
 $(document).ready(function(){ //function 內的內容會在整個原始黨載入完成後執行
     //$().aaa();
     $('input[type="checkbox"]').change(function(){
+        $('#all-cafe').html();
         refreshList();
     });
+    
 });

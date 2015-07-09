@@ -10,23 +10,23 @@
     
     <body>
       <?php
-        $wifi=1; //wifi 布林射程 1
+        $wifi=1; //wifi 布林設成 1
         $electronic=1;
         $plug=1;
         ?>
        <div id="main" style="width:300px; height:600px; background-color:brown;">
            <div id="checkboxes" style="">
                 <input type=checkbox value="wifi" name="wifi" > Wifi
-                <input type=checkbox value="electronic" name="electronic" onchange=""> Plug
-                <input type=checkbox value="plug" name="plug" onchange=""> Indside Sites
+                <input type=checkbox value="electronic" name="electronic"> Plug
+                <input type=checkbox value="plug" name="plug"> Indside Sites
             </div>
         
             <div style="float:left;" id="all-cafe">
-                <br><br><br>
-                <?php 
-                //hihi
-                //我故意的
-		      
+                <?php
+                    $result = show_all_cafe();
+                    while($row = mysql_fetch_row($result)){
+                        echo "店家：$row[0]"."<br>";
+                    }
                 ?>
             </div>
            
