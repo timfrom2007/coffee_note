@@ -1,0 +1,20 @@
+<html>
+   <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+       <title>Register Page</title>
+   </head>
+   <body>
+       <form name="form" method="post" action="add_cafe_finish.php" enctype="multipart/form-data" >
+           咖啡店名：<input type="text" name="cafe_name" /> <br>
+           金額限制：<input type="text" name="cost_limit" /> <br>
+           時間限制：<input type="text" name="time_limit" /> <br>
+           是否有wifi： Yes<input type="radio" name="wifi" value="1"/> No<input type="radio" name="wifi" value="0"/> <br>
+           是否有插頭： Yes<input type="radio" name="plug" value="1"/> No<input type="radio" name="plug" value="0"/> <br>
+           是否可攜帶寵物：Yes<input type="radio" name="pet" value="1"/> No<input type="radio" name="pet" value="0"/> <br>
+           圖片：<input type="file" name="fileToUpload" id="fileToUpload">
+           <input type="submit" name="button" value="確定" />
+       </form>
+       
+       
+   </body>
+</html>

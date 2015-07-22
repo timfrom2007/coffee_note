@@ -1,8 +1,8 @@
 
-function refreshList(){
+function refreshList() {
     //var val = $(this).val(); //取道自己的 value
         //var name = $(this).attr('name'); //取自己的 name
-        var data = new Object(), allCheckBoxes = $('input[type="checkbox"]'), curCheck = null;
+        var data = new Object(), allCheckBoxes = $('input[type="checkbox"]'), allTextBoxes = $("input[type='text']"), curCheck = null, curText = null;
         for( var i=0 ; i<allCheckBoxes.length ; i+=1 ){
             curCheck = allCheckBoxes.eq(i);
             data[curCheck.attr('name')] = curCheck.prop('checked');
@@ -19,8 +19,11 @@ function refreshList(){
             
             var check = $('#check').prop('checked'); //上面兩種都可用，而且回傳 true v
             var check = $('#check').prop('checked', true); //設定他 check v
-            var check = $('#check').prop('checked', false); //設定他不 check v
-            
+            var check = $('#check').prop('checked', false); //設定他不 check v  
+        }
+        for(var i=0 ; i<allTextBoxes.length; i+=1){
+            curText = allTextBoxes.eq(i);
+            data[curText.attr('name')] = curText.val();
         }
         
         //var data = new Object();
@@ -46,6 +49,11 @@ function refreshList(){
 $(document).ready(function(){ //function 內的內容會在整個原始黨載入完成後執行
     //$().aaa();
     $('input[type="checkbox"]').change(function(){
+        $('#all-cafe').html();
+        refreshList();
+    });
+    
+    $('input[type="text"]').change(function(){
         $('#all-cafe').html();
         refreshList();
     });
