@@ -1,15 +1,12 @@
 $(document).ready(function(){ //function 內的內容會在整個原始黨載入完成後執行
 
-// $('#cost-limit li').on("mouseenter",(function(){
-//     $(this).css("color","red");//#8B4513
-// });
-// $('#cost-limit li').mouseleave(function(){
-//     $(this).css("color","#8B4513");
-// });
+$('#cost-limit li').on("mouseenter",function(){
+    $(this).css("color","#FF8C00");
+});
+$('#cost-limit li').on("mouseleave",function(){
+    $(this).css("color","#8B4513");
+});
 
- // $('#cost-limit li').mouseenter(function(){
- //        $(this).css("color","blue");
- //    });
 $('#cost-limit li').click(function(){
     $('#cost-limit li').css("color","black");
     $(this).css("color","red");
@@ -36,6 +33,12 @@ $('#plug-limit li').click(function(){
 $('#pet-limit li').click(function(){
     $('#pet-limit li').css("color","black");
     $(this).css("color","red");
+});
+$('#articleChange-color').on("mouseenter",function(){
+    $(this).css("color","#FF8C00");
+});
+$('#articleChange-color').on("mouseleave",function(){
+    $(this).css("color","#8B4513");
 });
 
 });
