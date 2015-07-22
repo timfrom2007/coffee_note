@@ -33,7 +33,12 @@
 	/*width: 560px;*/
 }
 .header{
-	width:100%;
+	position:relative;
+	top:10px;
+	left:5%;
+}
+.header img{
+	width:55%;
 }
 
 .left-column{
