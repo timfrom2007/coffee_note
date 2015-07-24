@@ -14,10 +14,10 @@
 <body>
      <div class="wrap">
 	  	<div class="main">
-	  		<div class="headback">
+	  		<!-- <div class="headback"> -->
   				<!-- <img src="img/headback.jpg" alt="revise later"> -->
-  			</div>
-	  		<div class="header">
+  			<!-- </div> -->
+	  		<!-- <div class="header">
 	  			<a  href="">
 	  				<img src="img/Note.png" alt="revise later">
 	  			</a>
@@ -44,13 +44,14 @@
 	  					<img src="img/articleHead.png" alt="revise later">
 	  				</a>
 	  			</div>
-	  		</div>
-	  		
+	  		</div>	  --> 		
 	  		<div class="left-column">
 			  	<h1 class="findShops">
+			  		<!-- filter-v -->
 			    	<a><img src="img/findShops.png"></a>
 			    </h1>
-			    <div class="test">
+			    <!-- test -->
+			    <div class="filter-item">
 					<!-- <div class="test-title">台北行政區</div> -->
 					<select>
 					  <label>台北行政區</label>
@@ -71,43 +72,87 @@
 	  			</div>
 			    <div class="test">
 			    	<ul id="cost-limit">
-			    		<div class="test-title">消費限制</div>
-						<li data-cost="0">無低消</li>
-						<li data-cost="100">1-100元</li>
-						<li data-cost="200">101-200元</li>
-						<li data-cost="300">201-300元</li>
+			    		<!-- filter-title -->
+			    		<div class="filter-title">消費限制</div>
+						<li data-cost="0">
+							<input type="checkbox" value="Y" onclick="">
+							<label>無低消</label>
+						</li>
+						<li data-cost="100">
+							<input type="checkbox" value="Y" onclick="">
+							<label>100元以內</label>
+						</li>
+						<li data-cost="200">
+							<input type="checkbox" value="Y" onclick="">
+							<label>一杯飲料</label>
+						</li>
+						<li data-cost="300">
+							<input type="checkbox" value="Y" onclick="">
+							<label>一份主食</label>
+						</li>
 					</ul>
 	  			</div>
-	  			<div class="test">
+	  			<div class="filter-item">
 			    	<ul id="time-limit">
 			    		<div class="test-title">時間限制</div>
-						<li data-time="0">不限</li>
-						<li data-time="0.5">30分鐘</li>
-						<li data-time="1">0.5-1小時</li>
-						<li data-time="1.5">1-1.5小時</li>
-						<li data-time="2">1.5-2小時</li>
-						<li data-time="2.5">2-2.5小時</li>
+						<li data-time="0">
+							<input type="checkbox" value="Y" onclick="">
+							<label>1.5小時</label>
+						</li>
+						<li data-time="2">
+							<input type="checkbox" value="Y" onclick="">
+							<label>2小時</label>
+						2小時</li>
 					</ul>
 	  			</div>
-	  			<div class="test">
+	  			<div class="filter-item">
 			    	<ul id="wifi-limit">
-			    		<div class="test-title">Wifi</div>
-						<li data-wifi="1">有</li>
-						<li data-wifi="0">無</li>
+			    		<div class="test-title">配備</div>
+						<li data-wifi="1">
+							<input type="checkbox" value="Y" onclick="">
+							<label>wifi</label>
+						</li>
+						<li data-wifi="0">
+							<input type="checkbox" value="Y" onclick="">
+							<label>插座</label>
+						</li>
 					</ul>
 	  			</div>
-	  			<div class="test">
-			    	<ul id="plug-limit">
-			    		<div class="test-title">插座</div>
-						<li data-plug=1>有</li>
-						<li data-plug=0>無</li>
+	  			<div class="filter-item">
+			    	<ul id="eat-limit">
+			    		<div class="test-title">
+			    			<input type="checkbox" value="Y" onclick="">
+							<label>餐飲</label>
+						</div>
+						<li data-plug=1>
+							<input type="checkbox" value="Y" onclick="">
+							<label>現煮咖啡</label>
+						</li>
+						<li data-plug=0>
+							<input type="checkbox" value="Y" onclick="">
+							<label>簡餐</label>
+						</li>
+						<li data-plug=2>
+							<input type="checkbox" value="Y" onclick="">
+							<label>甜點</label>
+						</li>
 					</ul>
 	  			</div>
-	  			<div class="test">
-			    	<ul id="pet-limit">
-			    		<div class="test-title">攜帶寵物</div>
-						<li data-pet="1">可</li>
-						<li data-pet="0">不可</li>
+	  			<div class="filter-item">
+			    	<ul id="other-limit">
+			    		<div class="test-title">其他限制</div>
+						<li data-pet="1">
+							<input type="checkbox" value="Y" onclick="">
+							<label>寵物</label>
+						</li>
+						<li data-pet="0">
+							<input type="checkbox" value="Y" onclick="">
+							<label>定位</label>
+						</li>
+						<li data-pet="2">
+							<input type="checkbox" value="Y" onclick="">
+							<label>未到齊可入座</label>
+						</li>
 					</ul>
 	  		</div>
 	  		<div class="shop-list">
@@ -119,24 +164,35 @@
 						<img src="img/coffeeShop.png">
 		  			</div>
 		  			<div class="shop-search">
-		  				<img src="img/search-icon.png">
 		  				<input type="text" value="" placeholder="搜尋店家名稱" class="inputShop">
+		  				<button type="button">
+		  					<img src="img/search-icon.png">
+		  				</button>
 		  			</div>
 		  		</div>
 	  			<div class="one-shop">
 	  				<div class="shop-line">
 	  					<img src="img/line.png" alt="revise later">
 	  				</div>
+	  				<!-- ul li shop list shop item line pseudo -->
 	  				<div class="shop-box">
 						<div class="shop-photo">
 							<img src="img/shop_photo.png" alt="revise later">
 						</div>
-						<div class="shop-name">
-							Starbucks
+						<div class="shop-text-box">
+							<!-- shop-summery -->
+							<div class="shop-name">
+								Starbucks
+							</div>
+							<p class="shop-name-text">
+								<!-- shop-address -->
+								地址:遍布全台
+							</p>
+							<p class="shop-name-text">
+								<!-- shop-teaser -->
+								特色:跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青。
+							</p>
 						</div>
-						<p class="shop-name-text">
-							it's been a 
-						</p>
 	  				</div>
 	  			</div>
 	  			<div class="one-shop">
@@ -147,12 +203,17 @@
 						<div class="shop-photo">
 							<img src="img/shop_photo.png" alt="revise later">
 						</div>
-						<div class="shop-name">
-							Starbucks
+						<div class="shop-text-box">
+							<div class="shop-name">
+								Starbucks
+							</div>
+							<p class="shop-name-text">
+								地址:遍布全台
+							</p>
+							<p class="shop-name-text">
+								特色:跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青。
+							</p>
 						</div>
-						<p class="shop-name-text">
-							it's been a 
-						</p>
 	  				</div>
 	  			</div>
 	  			<div class="one-shop">
@@ -163,12 +224,38 @@
 						<div class="shop-photo">
 							<img src="img/shop_photo.png" alt="revise later">
 						</div>
-						<div class="shop-name">
-							Starbucks
+						<div class="shop-text-box">
+							<div class="shop-name">
+								Starbucks
+							</div>
+							<p class="shop-name-text">
+								地址:遍布全台
+							</p>
+							<p class="shop-name-text">
+								特色:跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青。
+							</p>
 						</div>
-						<p class="shop-name-text">
-							it's been a 
-						</p>
+	  				</div>
+	  			</div>
+	  			<div class="one-shop">
+	  				<div class="shop-line">
+	  					<img src="img/line.png" alt="revise later">
+	  				</div>
+	  				<div class="shop-box">
+						<div class="shop-photo">
+							<img src="img/shop_photo.png" alt="revise later">
+						</div>
+						<div class="shop-text-box">
+							<div class="shop-name">
+								Starbucks
+							</div>
+							<p class="shop-name-text">
+								地址:遍布全台
+							</p>
+							<p class="shop-name-text">
+								特色:跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青。
+							</p>
+						</div>
 	  				</div>
 	  			</div>
 	  			<div class="page">
