@@ -9,25 +9,47 @@ $(document).ready(function(){ //function 內的內容會在整個原始黨載入
         $(this).parent().parent().find('.article-item-whole').removeClass('is-acted');
       }
     }).change();
-    $( "#cost-item-100" ).change(function() {
+
+    $( "#article-story" ).change(function() {
       if($(this).prop('checked')){
         // var hihi=$(this) ;
         // console.log(hihi);
-        $(this).parent().parent().find('.cost-100').addClass('is-acted');
+        $(this).parent().parent().find('.article-item-story').addClass('is-acted');
       }else{
-        $(this).parent().parent().find('.cost-100').removeClass('is-acted');
+        $(this).parent().parent().find('.article-item-story').removeClass('is-acted');
       }
     }).change();
-    $( "#cost-item-drink" ).change(function() {
+
+    $( "#article-comment" ).change(function() {
       if($(this).prop('checked')){
         // var hihi=$(this) ;
         // console.log(hihi);
-        $(this).parent().parent().find('.cost-drink').addClass('is-acted');
+        $(this).parent().parent().find('.article-item-comment').addClass('is-acted');
       }else{
-        $(this).parent().parent().find('.cost-drink').removeClass('is-acted');
+        $(this).parent().parent().find('.article-item-comment').removeClass('is-acted');
       }
     }).change();
-    
+
+     $( "#article-know" ).change(function() {
+      if($(this).prop('checked')){
+        // var hihi=$(this) ;
+        // console.log(hihi);
+        $(this).parent().parent().find('.article-item-know').addClass('is-acted');
+      }else{
+        $(this).parent().parent().find('.article-item-know').removeClass('is-acted');
+      }
+    }).change();
+     
+      $( "#article-news" ).change(function() {
+      if($(this).prop('checked')){
+        // var hihi=$(this) ;
+        // console.log(hihi);
+        $(this).parent().parent().find('.article-item-news').addClass('is-acted');
+      }else{
+        $(this).parent().parent().find('.article-item-news').removeClass('is-acted');
+      }
+    }).change();
+
 
 
 // $('#cost-limit li').on("mouseenter",function(){
