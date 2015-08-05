@@ -126,6 +126,10 @@ color: #8B4513;
 	top:3.5%;
 	left:15%;
 	font-size:25px;
+	width:75px;
+}
+.shop-title-text img{
+	width:100%;
 }
 .one-shop{
 	color:transparent;
