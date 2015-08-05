@@ -240,6 +240,7 @@ color: #8B4513;
 	padding:8px;
 }
 .hot-article-wrap img{
+	float:left;
 	width:25%;
 }
 .hot-article-wrap a{
@@ -251,6 +252,13 @@ color: #8B4513;
 	font-size: 18px;
 	/*line-height:20px;*/
 	vertical-align:middle;
+}
+.hot-article-text{
+	float:left;
+	position:relative;
+	top: 14px;
+    left: 10px;
+	margin:2px 3px 4px 5px;
 }
 .hot-article-wrap div{
 	display:inline-block;
