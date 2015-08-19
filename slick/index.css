@@ -1,0 +1,17 @@
+body{
+  background: green;
+}
+.slider{
+  position: relative;
+  left:50px;
+  width: 1100px;
+  /*margin: 20px;*/
+  background-color: white;
+}
+.image{
+  height:500px;
+  margin:10px;
+}
+.imgae{
+  width:20px;
+}
