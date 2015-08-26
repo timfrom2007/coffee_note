@@ -4,14 +4,75 @@ body{
 .slider{
   position: relative;
   left:50px;
-  width: 1100px;
-  /*margin: 20px;*/
+  width: 380px;
+  margin: 20px;
+  
+}
+.image01{
+  height:300px;
+  width:350px;
+  margin-right: 25px;
+  /*background-color: red;*/
+   background-image: url("img/cafe/dessert03.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+.image02{
+  height:300px;
+  width:350px;
+  margin-right: 25px;
+  /*background-color: red;*/
+   background-image: url("img/cafe/dessert02.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+.image03{
+  height:300px;
+  width:350px;
+  margin-right: 25px;
+  /*background-color: red;*/
+   background-image: url("img/cafe/dessert01.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+.image04{
+  height:300px;
+  width:350px;
+  margin-right: 25px;
+  /*background-color: red;*/
+   background-image: url("img/cafe/coffee01.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+ .image05{
+  height:300px;
+  width:350px;
+  margin-right: 25px;
+  /*background-color: red;*/
+   background-image: url("img/cafe/coffee02.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+.image06{
+  height:300px;
+  width:350px;
+  margin-right: 25px;
+  /*background-color: red;*/
+   background-image: url("img/cafe/coffee03.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+
+/*.imgae img{
+  height:100%;
+  padding:20px 40px;
   background-color: white;
 }
-.image{
-  height:500px;
-  margin:10px;
-}
-.imgae{
-  width:20px;
-}
+*/

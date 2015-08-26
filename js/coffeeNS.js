@@ -1,18 +1,51 @@
 
-$(document).ready(function(){ //function 內的內容會在整個原始黨載入完成後執行
+// $(document).ready(function(){ 
+ 
+// });
+$(document).ready(function(){
+  // alert("document is ready");
+  $("#smileface").on("mouseenter",function(){
+    $("#smileface-check").removeClass('is-hidden');
+  });
   
-  $( "#cost-item-0" ).change(function() {
-    if($(this).prop('checked')){  //先將所有選取改成false,另外再把此改成true
-      // var hihi=$(this) ;
-      // console.log(hihi);
-      $("#cost-limit input").prop('checked', false);  
-      $("#cost-limit li").removeClass('is-acted');
-      $(this).prop('checked', true);
-      $(this).parent().parent().find('.cost-0').addClass('is-acted');
-    }else{
-      
-      $(this).parent().parent().find('.cost-0').removeClass('is-acted');
-    }
-  }).change();
-    
+
+  // if($("#smileface-check").on("click")){ 
+  //   $("#sosoface-check").addClass('is-hidden'); 
+  //   $("badface-check").addClass('is-hidden');
+  // }else{
+  //   $("#smileface-check").on("mouseleave",function(){
+  //   $("#smileface-check").addClass('is-hidden');
+  //   });
+  // }
+
+ $("#smileface-check").on("click",function(){
+    $("#sosoface-check").addClass('is-hidden'); 
+    $("badface-check").addClass('is-hidden');
+  });
+
+
+  $("#sosoface").on("mouseenter",function(){
+    $("#sosoface-check").removeClass('is-hidden');
+  });
+
+ $("#sosoface-check").on("click",function(){
+    $("#smileface-check").addClass('is-hidden'); 
+    $("#badface-check").addClass('is-hidden');
+  });
+
+
+  $("#badface").on("mouseenter",function(){
+    $("#badface-check").removeClass('is-hidden');
+  });
+  // $("#badface-check").on("mouseleave",function(){
+  //   $("#badface-check").addClass('is-hidden');
+  // });
+  $("#badface-check").on("click",function(){
+    $("#smileface-check").addClass('is-hidden'); 
+    $("#sosoface-check").addClass('is-hidden');
+  });
 });
+
+
+
+  
