@@ -1,0 +1,19 @@
+$fanny : blue
+@mixin cathay 
+	background: $fanny
+	font-size: 12px
+%lea
+	font-size: 20px  
+	line-height: 1.8
+	letter-spacing: 1px
+
+.rubi
+	width: 20px
+	+cathay
+	@extend %lea
+	.cathay
+		height: 20px
+		+cathay
+		@extend %lea
+
+

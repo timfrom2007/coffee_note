@@ -46,12 +46,80 @@
 	font-size:25px;
 	color: black;
 }
-.thumb{
-	display: inline;
+.faces{
+	display: inline-block;
 	vertical-align: middle;
-	position: relative;
-	right:-350px;
-	line-height:55px;
+	position: absolute;
+	left: 500px;
+}
+.smile{
+	display: inline-block;
+	vertical-align: middle;
+	width:70px;
+	height:70px;
+	background-image: url("../img/smileface.png");
+	background-size: 380%;
+	background-repeat: no-repeat;
+	background-position: 8% 31%; 
+}
+.smile-check{
+	position: absolute;
+	top:0;
+	left: 0;
+	display: inline-block;
+	vertical-align: middle;
+	width:70px;
+	height:70px;
+	background-image: url("../img/smileface.png");
+	background-size: 380%;
+	background-repeat: no-repeat;
+	background-position: 8% 67%; 
+}
+.soso{
+	display: inline-block;
+	vertical-align: middle;
+	width:70px;
+	height:70px;
+	background-image: url("../img/sosoface.png");
+	background-size: 402%;
+	background-repeat: no-repeat;
+	background-position: 52% 30%; 
+}
+.soso-check{
+	position: absolute;
+	top:0;
+	left: 74px;
+	display: inline-block;
+	vertical-align: middle;
+	width:70px;
+	height:70px;
+	background-image: url("../img/sosoface.png");
+	background-size: 402%;
+	background-repeat: no-repeat;
+	background-position: 53% 67%; 
+}
+.bad{
+	display: inline-block;
+	vertical-align: middle;
+	width:70px;
+	height:70px;
+	background-image: url("../img/cryface.png");
+	background-size: 445%;
+	background-repeat: no-repeat;
+	background-position: 92% 30%; 
+}
+.bad-check{
+	position: absolute;
+	top:0;
+	left: 148px;
+	display: inline-block;
+	vertical-align: middle;
+	width:70px;
+	height:70px;
+	background-image: url("../img/cryface.png");
+	background-size: 445%;
+	background-repeat: no-repeat;
+	background-position: 94% 66%; 
 }
 .thumb img{
 	width:6%;
@@ -214,13 +282,7 @@
 .map-item img{
 	width:100%;
 }
-.img-line{
-	padding-top: 10px;
-}
-.img-line img{
-	width: 70px;
-	height: 50px;
-}
+
 .find-shops{
 	position:relative;
 	padding:0px 0px 0px 20px;
@@ -267,11 +329,7 @@
 	font-size: 18px;
 	vertical-align:middle;
 }*/
-.comment-item img{
-	float:left;
-	width:80px;
-	/*display: */
-}
+
 .comment-item{
 	position: relative;
 	left:2px;
@@ -281,6 +339,13 @@
 	width:750px;
 	display: inline-block;
 	vertical-align: middle;
+}
+.comment-item img{
+	float:left;
+	width:80px;
+	height: 80px;
+	/*display: */
+	margin-right: 10px;
 }
 .comment-name{
 	position: relative;
@@ -312,4 +377,73 @@
 }
 .user-head{
 	border-radius: 50%;
+}
+.slider{
+  position: relative;
+  left: 20px;
+  width: 350px;
+  height: 230px;
+}
+.image01{
+  height:230px;
+  width:320px;
+  margin-right: 18px;
+  /*background-color: red;*/
+   background-image: url("../img/cafe/dessert03.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+.image02{
+  height:230px;
+  width:350px;
+  margin-right: 18px;
+  /*background-color: red;*/
+   background-image: url("../img/cafe/dessert02.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+.image03{
+  height:230px;
+  width:350px;
+  margin-right: 18px;
+  /*background-color: red;*/
+   background-image: url("../img/cafe/dessert01.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+.image04{
+  height:230px;
+  width:350px;
+  margin-right: 18px;
+  /*background-color: red;*/
+   background-image: url("../img/cafe/coffee01.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+ .image05{
+  height:230px;
+  width:350px;
+  margin-right: 18px;
+  /*background-color: red;*/
+   background-image: url("../img/cafe/coffee02.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+.image06{
+  height:230px;
+  width:350px;
+  margin-right: 18px;
+  /*background-color: red;*/
+  background-image: url("../img/cafe/coffee03.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+.is-hidden{
+	display:none;
 }

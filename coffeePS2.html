@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="tw-zh" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<meta property="og:title" content="咖啡筆記文章" />
+	<meta property="og:type" content="所有吃喝動手做" />
+	<title>咖啡筆記文章</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="stylePS2.css">
+	<!-- <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'> -->
+	 <script src="js/jquery-1.11.3.min.js"></script>
+	 <script src="js/coffeePS2.js"></script>
+</head>
+<body>
+     <div class="wrap">
+	  	<div class="main">
+	  		<div class="headback">
+  				<!-- <img src="img/headback.jpg" alt="revise later"> -->
+  			</div>
+	  		<div class="header">
+	  			<a  href="">
+	  				<img src="img/Note.png" alt="revise later">
+	  			</a>
+	  			<div class="little_header">
+					<a id="articleChange-color" class="selector-check">
+	  					文章
+	  				</a>
+	  				<a id="articleChange-color" class="selector">
+	  					專輯
+	  				</a>
+	  				<a id="articleChange-color" class="selector">
+	  					原料
+	  				</a>
+	  				<a id="articleChange-color" class="selector">
+	  					器材
+	  				</a>
+	  				<a id="articleChange-color" class="selector">
+	  					店家
+	  				</a>
+	  				<a id="articleChange-color" class="selector">
+	  					相簿
+	  				</a>
+	  				<a id="articleChange-color" class="selector">
+	  					活動
+	  				</a>
+	  			
+	  			</div>
+	  		</div>	 		
+		    <div class="filter-column">
+	    		<ul class="filter-item" id="article">
+					<li class="article-item-whole" data-cost="0">	
+						<input id="article-whole" type="checkbox" value="Y" onclick="">
+						<label for="article-whole">全部</label>
+					</li>
+					<li class="article-item-story" data-cost="1">
+						<input id="article-story" type="checkbox" value="Y" onclick="">
+						<label for="article-story">店家故事</label>
+					</li>
+					<li class="article-item-comment" data-cost="1">
+						<input id="article-comment" type="checkbox" value="Y" onclick="">
+						<label for="article-comment">心得評論</label>
+					</li>
+					<li class="article-item-know" data-cost="1">
+						<input id="article-know" type="checkbox" value="Y" onclick="">
+						<label for="article-know">知識</label>
+					</li>
+					<li class="article-item-news" data-cost="1">
+						<input id="article-news" type="checkbox" value="Y" onclick="">
+						<label for="article-news">新聞</label>
+					</li>
+				</ul>	
+				<div class="shop-search">
+		  				<input type="text" value="" placeholder="搜尋文章關鍵字" class="inputShop">
+		  				<div type="button">
+		  					<img src="img/search-icon.png">
+		  				</div>
+		  		</div>
+  			</div>
+	  		<div class="shop-list">
+		  		<div class="shop-header">
+		  			<div class="shop-title">
+		  				<img src="img/takengo.png">
+		  			</div>
+		  			<div class="shop-title-text">
+						咖啡冷掉還是好好喝
+		  			</div>
+		  		</div>
+		  		<li class="one-shop">
+	  				<div class="shop-box">
+						<div class="shop-text-box">
+	<!-- 						<div class="shop-name">
+								Starbucks超級無敵好喝的啦~~
+							</div> -->
+							<div class="shop-head-box">
+								<div class="shop-head-photo">
+									<img src="img/cafe/cafehead.jpg" alt="revise later">
+								</div>
+							</div>
+							<p class="shop-name-text">
+								跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。
+							</p>
+							<p class="shop-name-text">
+								跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。
+							</p>
+							<p class="shop-name-text">
+								跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青，而且好好喝喔。而且好好喝喔。
+							</p>
+							<div class="shop-text-item">
+								<!-- 咖啡隱士--08/05/2015 -->
+							</div>
+						</div>
+						<div class="a-foot">
+							<img src="img/authorFoot.png">
+						</div>
+					</div>
+			  	</li>
+			  	
+	  			<div class="page">
+				    <h>page:</h>
+					<a href="">1</a>    
+					<a href="">2</a>
+					<a href="">3</a>
+					<a href="">4</a>
+					<a href="">5</a>
+				</div>
+	  		</div>
+	  		<div class="right-column">
+			  	<div class="column-item">
+				  	<img src="img/cafe/dessert03.jpg" class="ads">
+				</div>
+			  	<div class="column-item">
+				  	<h1 class="find-shops">
+				    	<a><img src="img/hot-articles.png"></a>
+				    </h1>
+				    <div class="hot-article-wrap">
+					    <a href="">
+					    	<img src="img/cake.png" >
+					    	<p class="hot-article-text">女神咖啡杯大賣</p>
+					    </a>    
+						<a href="">
+							<img src="img/cake.png" >
+					    	<p class="hot-article-text">不限時咖啡店全集</p>
+						</a>
+						<a href="">
+							<img src="img/cake.png" >
+					    	<p class="hot-article-text">樹葉拉花拉不膩?</p>
+						</a>
+						<a href="">
+							<img src="img/cake.png" >
+							<p class="hot-article-text">咖啡冷掉還是好好喝</p>
+						</a>
+						<a href="">
+							<img src="img/cake.png" >
+							<p class="hot-article-text">原來七夕這樣喝咖啡</p>
+						</a>
+					</div>
+				</div>
+				
+				
+	  		</div>
+	  		<div class="footer">
+			<img src="img/footer.png" alt="revise later">
+			</div>
+		</div>	
+	</div>
+</body>

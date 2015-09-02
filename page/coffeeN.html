@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="tw-zh" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<meta property="og:title" content="咖啡筆記店家" />
+	<meta property="og:type" content="所有吃喝動手做" />
+	<title>咖啡筆記店家</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/styleN.css">
+	<!-- <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'> -->
+	 <script src="../js/jquery-1.11.3.min.js"></script>
+	 <script src="../js/coffeeN.js"></script>
+</head>
+<body>
+	<div class="headback"></div>
+	<div class="header">
+		<a  href="">
+			<img src="../img/Note.png" alt="revise later">
+		</a>
+		<div class="little_header">
+			<a id="articleChange-color" class="selector">文章</a>
+			<a id="articleChange-color" class="selector">專輯</a>
+			<a id="articleChange-color" class="selector">原料</a>
+			<a id="articleChange-color" class="selector">器材</a>
+			<a id="articleChange-color" class="selector-check">店家</a>
+			<a id="articleChange-color" class="selector">相簿</a>
+			<a id="articleChange-color" class="selector">活動</a>
+		</div>
+	</div>  		
+	<div class="left-column">
+	  	<h1 class="find-shops">
+	  		<!-- filter-v -->
+	    	<a><img src="../img/findShops.png"></a>
+	    </h1>
+	    <div class="filter-row">
+			<div class="filter-title">台北行政區</div>
+			<div class="filter-item">
+				<select>
+				  <option value="0">請選擇</option>
+				  <option value="1">中正區</option>
+				  <option value="2">大同區</option>
+				  <option value="3">中山區</option>
+				  <option value="4">松山區</option>
+				  <option value="5">大安區</option>
+				  <option value="6">萬華區</option>
+				  <option value="7">信義區</option>
+				  <option value="8">士林區</option>
+				  <option value="9">北投區</option>
+				  <option value="10">內湖區</option>
+				  <option value="11">南港區</option>
+				  <option value="12">文山區</option>
+				</select>
+				</div>
+			</div>
+	    <div class="filter-row">
+    		<div class="filter-title">消費限制</div>
+			<ul class="filter-item" id="cost-limit">
+				<li class="cost-0" data-cost="0">
+					<input id="cost-item-0" type="checkbox" value="0" onclick="">
+					<label for="cost-item-0">無低消</label>
+					<p class="asinput"></p>
+				</li>
+				<li class="cost-100" data-cost="100">
+					<input id="cost-item-100" type="checkbox" value="100" onclick="">
+					<label for="cost-item-100">100元以內</label>
+				</li>
+				<li class="cost-drink" data-cost="200">
+					<input id="cost-item-drink" type="checkbox" value="drink" onclick="">
+					<label for="cost-item-drink">一杯飲料</label>
+				</li>
+				<li class="cost-eat" data-cost="300">
+					<input id="cost-item-eat" type="checkbox" value="food" onclick="">
+					<label for="cost-item-eat">一份主食</label>
+				</li>
+			</ul>	
+			</div>
+			<div class="filter-row">
+    		<div class="filter-title">時間限制</div>
+    		<ul class="filter-item" id="time-limit">
+				<li class="time-0" data-time="0">
+					<input id="time-item-0" type="checkbox" value="0" onclick="">
+					<label for="time-item-0">無限制</label>
+				</li>
+				<li class="time-1" data-time="1">
+					<input id="time-item-1" type="checkbox" value="1.5" onclick="">
+					<label for="time-item-1">1.5小時</label>
+				</li>
+				<li class="time-2" data-time="2">
+					<input id="time-item-2" type="checkbox" value="2" onclick="">
+					<label for="time-item-2">2小時</label>
+				</li>
+			</ul>
+			</div>
+			<div class="filter-row">
+    		<div class="filter-title">配備</div>
+    		<ul class="filter-item" id="wifi-limit">
+				<li class="wifi-wifi" data-wifi="1">
+					<input id="wifi-item-wifi" type="checkbox" value="1" onclick="">
+					<label for="wifi-item-wifi">wifi</label>
+				</li>
+				<li class="wifi-plug" data-wifi="0">
+					<input id="wifi-item-plug" type="checkbox" value="1" onclick="">
+					<label for="wifi-item-plug">插座</label>
+				</li>
+			</ul>
+			</div>
+			<div class="filter-row">
+    		<div class="filter-title">餐飲</div>
+    		<ul class="filter-item" id="eat-limit">
+				<li class="eat-coffee" data-plug="1">
+					<input id="eat-item-coffee" type="checkbox" value="coffee" onclick="">
+					<label for="eat-item-coffee" >現煮咖啡</label>
+				</li>
+				<li class="eat-eat" data-plug="0">
+					<input id="eat-item-eat" type="checkbox" value="simple" onclick="">
+					<label for="eat-item-eat">簡餐</label>
+				</li>
+				<li class="eat-cake" data-plug=2>
+					<input id="eat-item-cake" type="checkbox" value="dessert" onclick="">
+					<label for="eat-item-cake">甜點</label>
+				</li>
+			</ul>
+			</div>
+			<div class="filter-row">
+    		<div class="filter-title">其他限制</div>
+    		<ul class="filter-item" id="other-limit">
+				<li class="other-pet" data-pet="1">
+					<input id="other-item-pet" type="checkbox" value="1" onclick="">
+					<label for="other-item-pet">寵物</label>
+				</li>
+				<li class="other-order" data-pet="0">
+					<input id="other-item-order" type="checkbox" value="1" onclick="">
+					<label for="other-item-order">定位</label>
+				</li>
+				<li class="other-enter" data-pet="2">
+					<input id="other-item-enter" type="checkbox" value="1" onclick="">
+					<label for="other-item-enter" >未到齊可入座</label>
+				</li>
+			</ul>
+			</div>
+		</div>
+	</div>
+	<div class="shop-list">
+  		<div class="shop-header">
+  			<div class="shop-title">
+  				<img src="../img/boil.png">
+  			</div>
+  			<div class="shop-title-text">
+				<img src="../img/coffeeShop.png">
+  			</div>
+  			<div class="shop-search">
+  				<input type="text" value="" placeholder="搜尋店家名稱" class="inputShop">
+  				<div type="button">
+  					<img src="../img/search-icon.png">
+  				</div>
+  			</div>
+  		</div>
+	  	<li class="one-shop">
+			<div class="shop-box">
+				<div class="shop-photo">
+					<img src="../img/shop_photo.png" alt="revise later">
+				</div>
+				<div class="shop-text-box">
+					<!-- shop-summery -->
+					<div class="shop-name">
+						Starbucks
+					</div>
+					<div class="shop-text-item">地址:</div>
+					<p class="shop-name-text">
+						<!-- shop-address -->
+						遍布全台
+					</p>
+					<div class="shop-text-item">特色:</div>
+					<p class="shop-name-text">
+						<!-- shop-teaser -->
+						跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青。
+					</p>
+				</div>
+			</div>
+	  	</li>
+	  	<li class="one-shop">
+			<div class="shop-box">
+				<div class="shop-photo">
+					<img src="../img/shop_photo.png" alt="revise later">
+				</div>
+				<div class="shop-text-box">
+					<!-- shop-summery -->
+					<div class="shop-name">
+						Starbucks
+					</div>
+					<div class="shop-text-item">地址:</div>
+					<p class="shop-name-text">
+						<!-- shop-address -->
+						遍布全台
+					</p>
+					<div class="shop-text-item">特色:</div>
+					<p class="shop-name-text">
+						<!-- shop-teaser -->
+						跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青。
+					</p>
+				</div>
+			</div>
+	  	</li>
+	  	<li class="one-shop">
+			<div class="shop-box">
+				<div class="shop-photo">
+					<img src="../img/shop_photo.png" alt="revise later">
+				</div>
+				<div class="shop-text-box">
+					<!-- shop-summery -->
+					<div class="shop-name">
+						Starbucks
+					</div>
+					<div class="shop-text-item">地址:</div>
+					<p class="shop-name-text">
+						<!-- shop-address -->
+						遍布全台
+					</p>
+					<div class="shop-text-item">特色:</div>
+					<p class="shop-name-text">
+						<!-- shop-teaser -->
+						跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青。
+					</p>
+				</div>
+			</div>
+	  	</li>
+	  	<li class="one-shop">
+			<div class="shop-box">
+				<div class="shop-photo">
+					<img src="../img/shop_photo.png" alt="revise later">
+				</div>
+				<div class="shop-text-box">
+					<!-- shop-summery -->
+					<div class="shop-name">
+						Starbucks
+					</div>
+					<div class="shop-text-item">地址:</div>
+					<p class="shop-name-text">
+						<!-- shop-address -->
+						遍布全台
+					</p>
+					<div class="shop-text-item">特色:</div>
+					<p class="shop-name-text">
+						<!-- shop-teaser -->
+						跟任何星巴克包裝打卡都很上鏡，不管是牛皮紙袋還是綠色女神咖啡杯都能讓你瞬間升級質感文青。
+					</p>
+				</div>
+			</div>
+	  	</li>
+	</div>
+	<div class="right-column">
+	  	<div class="column-item">
+		  	<img src="../img/cafe/dessert03.jpg" class="ads">
+		</div>	
+		<div class="column-item">
+		  	<h1>
+		    	<a>
+		    		<img src="../img/cake.png" class="hot-cake">
+		    		<img src="../img/hot-articles.png" class="hot-article-title">
+		    	</a>
+		    </h1>
+		    <div class="hot-article-wrap">
+			    <a href="">
+			    	<div class="dot" ></div>
+			    	<p class="hot-article-text">女神咖啡杯大賣，限時搶購熱銷秒殺</p>
+			    </a>    
+				<a href="">
+					<div class="dot" ></div>
+			    	<p class="hot-article-text">聊天聖地-不限時咖啡店全集</p>
+				</a>
+				<a href="">
+					<div class="dot" ></div>
+			    	<p class="hot-article-text">樹葉拉花拉不膩?簡單新招教給你</p>
+				</a>
+				<a href="">
+					<div class="dot" ></div>
+					<p class="hot-article-text">怎麼讓咖啡冷掉還是好好喝?</p>
+				</a>
+				<a href="">
+					<div class="dot" ></div>
+					<p class="hot-article-text">原來七夕這樣喝咖啡</p>
+				</a>
+			</div>
+		</div>		
+		<div class="column-item">
+		  	<img src="../img/cafe/dessert03.jpg" class="ads">
+		</div>
+	</div>
+	<div class="page">
+	    <h>page:</h>
+		<a href="">1</a>    
+		<a href="">2</a>
+		<a href="">3</a>
+		<a href="">4</a>
+		<a href="">5</a>
+	</div>
+	<div class="footer">
+		<img src="../img/footer.png" alt="revise later">
+	</div>
+</body>
