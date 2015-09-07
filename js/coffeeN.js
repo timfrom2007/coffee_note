@@ -1,169 +1,195 @@
 
+function refreshList(){
+    
+    var data = new Object(), allCheckBoxes = $("input[type='checkbox']"), allRadioBoxes = $("input[type='radio']"), curCheck = null, curRadio = null, allSelectBox = $("select"), curSelect = null;
+    
+    for( var i=0 ; i<allCheckBoxes.length ; i+=1 ){
+        curCheck = allCheckBoxes.eq(i);
+        if(curCheck.prop('checked')){
+            data[curCheck.attr('name')] = curCheck.val();
+        }
+    }
+    
+    for(var i=0 ; i<allSelectBox.length; i+=1){
+        curSelect = allSelectBox.eq(i);
+        data[curSelect.attr('name')] = curSelect.find(":selected").val();
+    }
+
+    console.log(data);
+    
+    $.ajax({
+            url: window.location.origin+'/coffee_note/ajax/coffeeN_list.php',
+            type: 'POST',
+            data: data,
+            success: function(msg){
+                $('#shop').html(msg);
+            },
+            error: function(xhr){ //不寫也可
+                console.log(xhr);
+            }
+    });
+}
+
+
 $(document).ready(function(){ //function 內的內容會在整個原始黨載入完成後執行
-    $( "#cost-item-0" ).change(function() {
-      if($(this).prop('checked')){  //先將所有選取改成false,另外再把此改成true
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $("#cost-limit input").prop('checked', false);  
-        $("#cost-limit li").removeClass('is-acted');
-        $(this).prop('checked', true);
-        $(this).parent().parent().find('.cost-0').addClass('is-acted');
-      }else{
+    
+    $("#area").change(function(){
+        $('#shop').html();
+        refreshList(); //呼叫ajax
+    });
         
-        $(this).parent().parent().find('.cost-0').removeClass('is-acted');
+    $( "#eat-item-credit" ).change(function() {
+        $('#shop').html();
+        refreshList(); //呼叫ajax
+      if($(this).prop('checked')){
+        $(this).parent().parent().find('.service-credit').addClass('is-acted');
+
+      }else{
+        $(this).parent().parent().find('.service-credit').removeClass('is-acted');
       }
-    }).change();
+
+    });
     
-    $( "#cost-item-100" ).change(function() {  //先將所有選取改成false,另外再把此改成true
+    
+    $( "#eat-item-meal" ).change(function() {
+        $('#shop').html();
+        refreshList(); //呼叫ajax
+      if($(this).prop('checked')){
+        $(this).parent().parent().find('.service-meal').addClass('is-acted');
+      }else{
+        $(this).parent().parent().find('.service-meal').removeClass('is-acted');
+      }
+
+    });
+    
+    
+    $( "#eat-item-reservation" ).change(function() {
+        $('#shop').html();
+        refreshList(); //呼叫ajax
+      if($(this).prop('checked')){
+        $(this).parent().parent().find('.service-reservation').addClass('is-acted');
+      }else{
+        $(this).parent().parent().find('.service-reservation').removeClass('is-acted');
+      }
+
+    });
+    
+    
+    $( "#eat-item-deliver" ).change(function() {
+        $('#shop').html();
+        refreshList(); //呼叫ajax
       if($(this).prop('checked')){
         // var hihi=$(this) ;
         // console.log(hihi);
-        $("#cost-limit input").prop('checked', false);
-        $("#cost-limit li").removeClass('is-acted');
-        $(this).prop('checked', true);
-        $(this).parent().parent().find('.cost-100').addClass('is-acted');
+        $(this).parent().parent().find('.service-deliver').addClass('is-acted');
       }else{
-        $(this).parent().parent().find('.cost-100').removeClass('is-acted');
+        $(this).parent().parent().find('.service-deliver').removeClass('is-acted');
       }
-    }).change();
+    });
     
-    $( "#cost-item-drink" ).change(function() {  //先將所有選取改成false,另外再把此改成true
-      if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $("#cost-limit input").prop('checked', false);
-        $("#cost-limit li").removeClass('is-acted');
-        $(this).prop('checked', true);
-        $(this).parent().parent().find('.cost-drink').addClass('is-acted');
-      }else{
-        $(this).parent().parent().find('.cost-drink').removeClass('is-acted');
-      }
-    }).change();
     
-    $( "#cost-item-eat" ).change(function() {  //先將所有選取改成false,另外再把此改成true
+    $( "#eat-item-book_out" ).change(function() {
+        $('#shop').html();
+        refreshList(); //呼叫ajax
       if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $("#cost-limit input").prop('checked', false);
-        $("#cost-limit li").removeClass('is-acted');
-        $(this).prop('checked', true);
-        $(this).parent().parent().find('.cost-eat').addClass('is-acted');
+        $(this).parent().parent().find('.service-book_out').addClass('is-acted');
       }else{
-        $(this).parent().parent().find('.cost-eat').removeClass('is-acted');
+        $(this).parent().parent().find('.service-book_out').removeClass('is-acted');
       }
-    }).change();
+
+    });
     
-    $( "#time-item-0" ).change(function() {
+    $( "#eat-item-exhibition" ).change(function() {
       if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $("#time-limit input").prop('checked', false);
-        $("#time-limit li").removeClass('is-acted');
-        $(this).prop('checked', true);
-        $(this).parent().parent().find('.time-0').addClass('is-acted');
+        $(this).parent().parent().find('.service-exhibition').addClass('is-acted');
       }else{
-        $(this).parent().parent().find('.time-0').removeClass('is-acted');
+        $(this).parent().parent().find('.service-exhibition').removeClass('is-acted');
       }
-    }).change();
+        $('#shop').html();
+        refreshList(); //呼叫ajax
+    });
     
-    $( "#time-item-1" ).change(function() {
+    $( "#eat-item-time_unlimit" ).change(function() {
+        $('#shop').html();
+        refreshList(); //呼叫ajax
+        
       if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $("#time-limit input").prop('checked', false);
-        $("#time-limit li").removeClass('is-acted');
-        $(this).prop('checked', true);
-        $(this).parent().parent().find('.time-1').addClass('is-acted');
+        $(this).parent().parent().find('.service-time_unlimit').addClass('is-acted');
       }else{
-        $(this).parent().parent().find('.time-1').removeClass('is-acted');
+        $(this).parent().parent().find('.service-time_unlimit').removeClass('is-acted');
       }
-    }).change();
+
+    });
     
-    $( "#time-item-2" ).change(function() {
-      if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $("#time-limit input").prop('checked', false);
-        $("#time-limit li").removeClass('is-acted');
-        $(this).prop('checked', true);
-        $(this).parent().parent().find('.time-2').addClass('is-acted');
-      }else{
-        $(this).parent().parent().find('.time-2').removeClass('is-acted');
-      }
-    }).change();
     
     $( "#wifi-item-wifi" ).change(function() {
+        $('#shop').html();
+        refreshList(); //呼叫ajax
       if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $(this).parent().parent().find('.wifi-wifi').addClass('is-acted');
+        $(this).parent().parent().find('.equipment-wifi').addClass('is-acted');
       }else{
-        $(this).parent().parent().find('.wifi-wifi').removeClass('is-acted');
+        $(this).parent().parent().find('.equipment-wifi').removeClass('is-acted');
       }
-    }).change();
+
+    });
+    
+    
     $( "#wifi-item-plug" ).change(function() {
+        $('#shop').html();
+        refreshList(); //呼叫ajax
       if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $(this).parent().parent().find('.wifi-plug').addClass('is-acted');
+        $(this).parent().parent().find('.equipment-plug').addClass('is-acted');
       }else{
-        $(this).parent().parent().find('.wifi-plug').removeClass('is-acted');
-      }
-    }).change();
-    $( "#eat-item-coffee" ).change(function() {
+        $(this).parent().parent().find('.equipment-plug').removeClass('is-acted');
+      }      
+
+    });
+    
+    
+    $( "#wifi-item-outdoor" ).change(function() {
+        $('#shop').html();
+        refreshList(); //呼叫ajax
       if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $(this).parent().parent().find('.eat-coffee').addClass('is-acted');
+        $(this).parent().parent().find('.equipment-outdoor').addClass('is-acted');
       }else{
-        $(this).parent().parent().find('.eat-coffee').removeClass('is-acted');
-      }
-    }).change();
-    $( "#eat-item-eat" ).change(function() {
+        $(this).parent().parent().find('.equipment-outdoor').removeClass('is-acted');
+      }      
+
+    });
+ 
+    
+    $( "#wifi-item-meeting_area" ).change(function() {
+        $('#shop').html();
+        refreshList(); //呼叫ajax
       if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $(this).parent().parent().find('.eat-eat').addClass('is-acted');
+        $(this).parent().parent().find('.equipment-meeting_area').addClass('is-acted');
       }else{
-        $(this).parent().parent().find('.eat-eat').removeClass('is-acted');
+        $(this).parent().parent().find('.equipment-meeting_area').removeClass('is-acted');
       }
-    }).change();
-    $( "#eat-item-cake" ).change(function() {
+    });
+    
+    
+    $( "#wifi-item-parking" ).change(function() {
+        $('#shop').html();
+        refreshList(); //呼叫ajax
       if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $(this).parent().parent().find('.eat-cake').addClass('is-acted');
+        $(this).parent().parent().find('.equipment-parking').addClass('is-acted');
       }else{
-        $(this).parent().parent().find('.eat-cake').removeClass('is-acted');
+        $(this).parent().parent().find('.equipment-parking').removeClass('is-acted');
       }
-    }).change();
-    $( "#other-item-pet" ).change(function() {
+    });
+    
+    
+    $( "#other-item-classic" ).change(function() {
+        $('#shop').html();  //清空內頁
+        refreshList(); //呼叫ajax
       if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $(this).parent().parent().find('.other-pet').addClass('is-acted');
+        $(this).parent().parent().find('.other-classic').addClass('is-acted');
       }else{
-        $(this).parent().parent().find('.other-pet').removeClass('is-acted');
-      }
-    }).change();
-    $( "#other-item-order" ).change(function() {
-      if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $(this).parent().parent().find('.other-order').addClass('is-acted');
-      }else{
-        $(this).parent().parent().find('.other-order').removeClass('is-acted');
-      }
-    }).change();
-    $( "#other-item-enter" ).change(function() {
-      if($(this).prop('checked')){
-        // var hihi=$(this) ;
-        // console.log(hihi);
-        $(this).parent().parent().find('.other-enter').addClass('is-acted');
-      }else{
-        $(this).parent().parent().find('.other-enter').removeClass('is-acted');
-      }
-    }).change();
+        $(this).parent().parent().find('.other-classic').removeClass('is-acted');
+      }         
+
+    });
 
 
 
@@ -174,5 +200,7 @@ $(document).ready(function(){ //function 內的內容會在整個原始黨載入
     $('#articleChange-color').on("mouseleave",function(){
         $(this).css("color","#8B4513");
     });
+    
+
 
 });
