@@ -35,7 +35,7 @@ while($row = mysql_fetch_row($result)){
         echo "<img src='../img/line.png' alt='revise later'>";
     echo "</div> -->";
     echo "<!-- ul li shop list shop item line pseudo -->";
-    echo "<div class='shop-box'>";
+    echo "<div class='shop-box' data-name='$row[0]'>";
         echo "<div class='shop-photo'>";
             echo "<img src='$row[19]' alt='revise later'>";
         echo "</div>";

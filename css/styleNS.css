@@ -146,8 +146,9 @@
 	margin:10px 0px 12px 0px;
 }
 .shop-head-photo{
+    margin-left:50px;
 	display: inline-block;
-	width:440px;
+	width:300px;
 	position:relative;
 	left:8px;
 	top:5px;
@@ -163,6 +164,7 @@
     right:-20px;
 	background-color:#FFFFBB;
 	border-radius: 10px;
+    margin-left:75px;
 }
 .intro-name{
 	display: inline-block;
@@ -173,7 +175,7 @@
 	margin-left: 20px;
 }
 .intro-wrap{
-	width:200px;
+	width:300px;
 	position:relative;
 	left:10px;
 	background-color:#FFFFBB;
@@ -194,6 +196,7 @@
 	width:400px;
 	display: inline-block;
 	vertical-align: middle;
+    width:100%;
 }
 .item{
 	margin: 0 2px 0 8px;

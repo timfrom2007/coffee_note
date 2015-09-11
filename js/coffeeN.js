@@ -18,7 +18,7 @@ function refreshList(){
     console.log(data);
     
     $.ajax({
-            url: window.location.origin+'/coffee_note/ajax/coffeeN_list.php',
+            url: window.location.origin+'/coffee_note/ajax/coffeeM_list.php',
             type: 'POST',
             data: data,
             success: function(msg){
@@ -202,5 +202,12 @@ $(document).ready(function(){ //function 內的內容會在整個原始黨載入
     });
     
 
+    $('.shop-box div').click(function(){
+        var cafe = $(this).parent().attr('data-name');
+        
+        var web = '/coffee_note/page/coffeeNS.php?cafe=';
+        console.log(web);
+        location.href = (web.concat(cafe));
+    });
 
 });
