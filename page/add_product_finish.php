@@ -5,26 +5,12 @@
 include("Mysql_Util.php");
 include("File_Util.php");
 
-$cafe_name = $_POST['cafe_name'];
-$telphone = $_POST['telphone'];
-$address = $_POST['address'];
-$hours = $_POST['hours'];
-$credit_card = $_POST['credit_card'];
-$reservation = $_POST['reservation'];
+$name = $_POST['name'];
+$species = $_POST['species'];
+$format = $_POST['format'];
+$characteristic = $_POST['characteristic'];
 $price = $_POST['price'];
-$wifi = $_POST['wifi'];
-$deliver = $_POST['deliver'];
-$outdoor = $_POST['outdoor'];
-$meeting_area = $_POST['meeting_area'];
-$book_out = $_POST['book_out'];
-$parking = $_POST['parking'];
-$exhibition = $_POST['exhibition'];
-$plug = $_POST['plug'];
-$time_unlimit = $_POST['time_unlimit'];
-$meal = $_POST['meal'];
-$classical = $_POST['classical'];
-$remark = $_POST['remark'];
-
+$type = $_POST['type'];
 
 $file_name = $_FILES["fileToUpload"]["name"]; //上傳檔案的原始名稱。
 $file_type = $_FILES["fileToUpload"]["type"]; //上傳的檔案類型。
@@ -62,15 +48,15 @@ else{
         echo "Sorry, there was an error uploading your file.";
     }
     
-    $sql = add_cafe($cafe_name, $telphone, $address, $hours, $credit_card, $reservation, $price, $wifi, $deliver, $outdoor, $meeting_area, $book_out, $parking, $exhibition, $plug, $time_unlimit, $meal, $classical, $remark, $target_file);
+    $sql = add_product($name, $species, $format, $characteristic, $price, $type, $target_file);
     if(mysql_query($sql)){
                 echo '<br>新增成功!';
-                //echo '<meta http-equiv=REFRESH CONTENT=2;url=add_cafe.html>';
+                echo '<meta http-equiv=REFRESH CONTENT=2;url=add_product.php>';
         echo $sql;
     }
     else{
                 echo '<br>新增失敗!'; echo $sql;
-                //echo '<meta http-equiv=REFRESH CONTENT=2;url=add_cafe.html>';
+                echo '<meta http-equiv=REFRESH CONTENT=2;url=add_product.php>';
     }
     
 }

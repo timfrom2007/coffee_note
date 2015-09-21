@@ -141,6 +141,47 @@ function show_cafe($area, $wifi, $plug, $outdoor, $meeting_area, $parking, $cred
     return $result;
 }
 
+function update_product($name, $species, $format, $characteristic, $price, $type, $img_src){
+    //將資料庫裡的所有會員資料顯示在畫面上
+    $sql = "UPDATE `product` SET ";
+    $set_str = '';
+    $where_str = 'WHERE 1';
+    
+    if($name!=null){
+        $set_str .= "`name` = '$name'";
+    }
+    
+    if($species!=null){
+        $set_str .= "`species` = '$species'";
+    }
+
+    if($format!=null){
+        $set_str .= "`format` = '$format'";
+    }
+
+    if($characteristic!=null){
+        $set_str .= "`characteristic` = '$characteristic'";
+    }
+
+    if($price!=null){
+        $set_str .= "`price` = '$price'";
+    }
+
+    if($type!=null){
+        $set_str .= "`type` = '$type'";
+    }
+
+    if($img_src!=null){
+        $set_str .= "`img_src` = '$img_src'";
+    }
+
+
+    $sql .= $set_str;
+    $sql .= $where_str;
+    
+    return $sql;
+}
+
 function count_all_cafe(){
     $sql = "SELECT count(*) FROM `cafe` where 1";
     $result = mysql_query($sql);
@@ -155,8 +196,14 @@ function count_all_product(){
     return $row[0];
 }
 
-function show_all_product($begin, $limit){
+function show_some_product($begin, $limit){
     $sql = "SELECT * FROM `product` limit $begin, $limit";
+    $result = mysql_query($sql);
+    return $result;
+}
+
+function show_all_product(){
+    $sql = "SELECT * FROM `product` where 1";
     $result = mysql_query($sql);
     return $result;
 }
@@ -180,56 +227,56 @@ function show_product($coffee_machine, $grinder, $coffee_filter_pot, $coffee_pot
     $where_str = '';
     
     if($coffee_machine!=null){
-        $where_str .= "`coffee_machine` = '$coffee_machine'";
+        $where_str .= "`type` = '$coffee_machine'";
     }
     
     if($grinder!=null){
         if($where_str != ''){
-            $where_str .= " AND ";
+            $where_str .= " OR ";
         }
-        $where_str .= "`grinder` = $grinder"; 
+        $where_str .= "`type` = $grinder"; 
     }
     
     if($coffee_filter_pot!=null){ 
         if($where_str != ''){
-            $where_str .= " AND ";
+            $where_str .= " OR ";
         }
-        $where_str .= "`coffee_filter_pot` = $coffee_filter_pot"; 
+        $where_str .= "`type` = $coffee_filter_pot"; 
     }
     
     if($coffee_pot!=null){
         if($where_str != ''){
-            $where_str .= " AND ";
+            $where_str .= " OR ";
         }
-        $where_str .= "`coffee_pot` = $coffee_pot"; 
+        $where_str .= "`type` = $coffee_pot"; 
     }
     
     if($hand_pot!=null){
         if($where_str != ''){
-            $where_str .= " AND ";
+            $where_str .= " OR ";
         }
-        $where_str .= "`hand_pot` = $hand_pot"; 
+        $where_str .= "`type` = $hand_pot"; 
     }
     
     if($hand_filter_pot!=null){
         if($where_str != ''){
-            $where_str .= " AND ";
+            $where_str .= " OR ";
         }
-        $where_str .= "`hand_filter_pot` = $hand_filter_pot"; 
+        $where_str .= "`type` = $hand_filter_pot"; 
     }
     
     if($foamer!=null){
         if($where_str != ''){
-            $where_str .= " AND ";
+            $where_str .= " OR ";
         }
-        $where_str .= "`foamer` = $foamer"; 
+        $where_str .= "`type` = $foamer"; 
     }
     
     if($gas!=null){
         if($where_str != ''){
-            $where_str .= " AND ";
+            $where_str .= " OR ";
         }
-        $where_str .= "`gas` = $gas"; 
+        $where_str .= "`type` = $gas"; 
     }
     
     if($where_str == ''){
@@ -243,8 +290,18 @@ function show_product($coffee_machine, $grinder, $coffee_filter_pot, $coffee_pot
     return $result;
 }
 
-function add_cafe($cafe_name, $area, $cost_limit, $time_limit, $wifi, $plug, $coffee, $meal, $dessert, $pet, $seat_order, $enter,$target_file, $address, $characteristic, $cafe_like, $cafe_dislike){
-    $sql = "INSERT INTO `cafe`(`cafe_name`, `area`, `cost_limit`, `time_limit`, `wifi`, `plug`, `coffee`, `meal`, `dessert`, `pet`, `seat_order`, `enter`, `pic_src`, `address`, `characteristic`, `cafe_like`, `cafe_dislike`) VALUES ('$cafe_name', '$area', '$cost_limit', '$time_limit', '$wifi', '$plug', '$coffee', '$meal', '$dessert', '$pet', '$seat_order', '$enter','$target_file', '$address', '$characteristic', '0', '0')";
+function add_cafe($cafe_name, $telphone, $address, $hours, $credit_card, $reservation, $price, $wifi, $deliver, $outdoor, $meeting_area, $book_out, $parking, $exhibition, $plug, $time_ulimit, $meal, $classical, $remark, $target_file){
+    $sql = "INSERT INTO `cafe`(`cafe_name`, `telphone`, `address`, `hours`, `credit_card`, `reservation`, `price`, `wifi`, `deliver`, `outdoor`, `meeting_area`, `book_out`, `parking`, `exhibition`, `plug`, `time_unlimit`, `meal`, `classical`, `remark`, `img_src`) VALUES ('$cafe_name', '$telphone', '$address', '$hours', '$credit_card', '$reservation', '$price', '$wifi', '$deliver', '$outdoor', '$meeting_area', '$book_out', '$parking', '$exhibition', '$plug', '$time_ulimit', '$meal', '$classical', '$remark', '$target_file')";
+    return $sql;
+}
+
+function add_product($name, $species, $format, $characteristic, $price, $type, $target_file){
+    $sql = "INSERT INTO `product`(`name`, `species`, `format`, `characteristic`, `price`, `type`, `img_src`) VALUES ('$name', '$species', '$format', '$characteristic', '$price', '$type', '$target_file')";
+    return $sql;
+}
+
+function delete_product($name){
+    $sql = "DELETE FROM `product` WHERE `name` = '$name'";
     return $sql;
 }
 

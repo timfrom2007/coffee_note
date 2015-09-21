@@ -6,11 +6,25 @@
    <body>
        <form name="form" method="post" action="add_cafe_finish.php" enctype="multipart/form-data" >
            咖啡店名：<input type="text" name="cafe_name" /> <br>
-           金額限制：<input type="text" name="cost_limit" /> <br>
-           時間限制：<input type="text" name="time_limit" /> <br>
-           是否有wifi： Yes<input type="radio" name="wifi" value="1"/> No<input type="radio" name="wifi" value="0"/> <br>
-           是否有插頭： Yes<input type="radio" name="plug" value="1"/> No<input type="radio" name="plug" value="0"/> <br>
-           是否可攜帶寵物：Yes<input type="radio" name="pet" value="1"/> No<input type="radio" name="pet" value="0"/> <br>
+           電話：<input type="text" name="telphone" /> <br>
+           地址：<input type="text" name="address" /> <br>
+           營業時間(直接打就可以了) <input type="text" name="hours" /> <br>
+           可刷卡： Yes<input type="radio" name="credit_card" value="1"/> No<input type="radio" name="credit_card" value="0"/> <br>
+           可訂位： Yes<input type="radio" name="reservation" value="1"/> No<input type="radio" name="reservation" value="0"/> <br>
+           價格範圍：<input type="text" name="price" /> <br>
+           WIFI： Yes<input type="radio" name="wifi" value="1"/> No<input type="radio" name="wifi" value="0"/> <br>
+           外送服務： Yes<input type="radio" name="deliver" value="1"/> No<input type="radio" name="deliver" value="0"/> <br>
+           戶外空間： Yes<input type="radio" name="outdoor" value="1"/> No<input type="radio" name="outdoor" value="0"/> <br>
+           會議廳： Yes<input type="radio" name="meeting_area" value="1"/> No<input type="radio" name="meeting_area" value="0"/> <br>
+           可包場： Yes<input type="radio" name="book_out" value="1"/> No<input type="radio" name="book_out" value="0"/> <br>
+           停車位： Yes<input type="radio" name="parking" value="1"/> No<input type="radio" name="parking" value="0"/> <br>
+           展演： Yes<input type="radio" name="exhibition" value="1"/> No<input type="radio" name="exhibition" value="0"/> <br>
+           插頭： Yes<input type="radio" name="plug" value="1"/> No<input type="radio" name="plug" value="0"/> <br>
+           時間不限制： Yes<input type="radio" name="time_unlimit" value="1"/> No<input type="radio" name="time_unlimit" value="0"/> <br>
+           簡餐： Yes<input type="radio" name="meal" value="1"/> No<input type="radio" name="meal" value="0"/> <br>
+           是否為經典門市： Yes<input type="radio" name="classical" value="1"/> No<input type="radio" name="classical" value="0"/> <br>
+           備註：<input type="text" name="remark" /> <br>
+
            圖片：<input type="file" name="fileToUpload" id="fileToUpload">
            <input type="submit" name="button" value="確定" />
        </form>

@@ -22,6 +22,7 @@ for($x=0; $x<3; $x++){
                         
     $result = show_product($coffee_machine, $grinder, $coffee_filter_pot, $coffee_pot, $hand_pot, $hand_filter_pot, $foamer, $gas, $count, 3);
     while($row = mysql_fetch_row($result)){
+        
         echo "<div class='shop-box'>";
             echo "<div class='shop-photo'>";
                 echo "<img src='$row[6]' alt='revise later'>";
