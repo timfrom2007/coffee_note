@@ -182,6 +182,100 @@ function update_product($name, $species, $format, $characteristic, $price, $type
     return $sql;
 }
 
+function update_cafe($cafe_name, $telphone, $address, $hours, $credit_card, $reservation, $price, $wifi, $deliver, $outdoor, $meeting_area, $book_out, $parking, $exhibition, $plug, $time_unlimit, $meal, $classical, $remark, $img_src){
+    //將資料庫裡的所有會員資料顯示在畫面上
+    $sql = "UPDATE `cafe` SET ";
+    $set_str = '';
+    $where_str = 'WHERE 1';
+    
+    if($name!=null){
+        $set_str .= "`cafe_name` = '$cafe_name'";
+    }
+    
+    if($telphone!=null){
+        $set_str .= "`telphone` = '$telphone'";
+    }
+    
+    if($address!=null){
+        $set_str .= "`address` = '$address'";
+    }
+    
+    if($hours!=null){
+        $set_str .= "`hours` = '$hours'";
+    }
+    
+    if($credit_card!=null){
+        $set_str .= "`credit_card` = '$credit_card'";
+    }
+    
+    if($reservation!=null){
+        $set_str .= "`reservation` = '$reservation'";
+    }
+    
+    if($price!=null){
+        $set_str .= "`price` = '$price'";
+    }
+    
+    if($wifi!=null){
+        $set_str .= "`wifi` = '$wifi'";
+    }
+    
+    if($deliver!=null){
+        $set_str .= "`deliver` = '$deliver'";
+    }
+    
+    if($outdoor!=null){
+        $set_str .= "`outdoor` = '$outdoor'";
+    }
+    
+    if($meeting_area!=null){
+        $set_str .= "`meeting_area` = '$meeting_area'";
+    }
+    
+    if($book_out!=null){
+        $set_str .= "`book_out` = '$book_out'";
+    }
+    
+    if($parking!=null){
+        $set_str .= "`parking` = '$parking'";
+    }
+    
+    if($exhibition!=null){
+        $set_str .= "`exhibition` = '$exhibition'";
+    }
+    
+    if($plug!=null){
+        $set_str .= "`plug` = '$plug'";
+    }
+    
+    if($time_unlimit!=null){
+        $set_str .= "`time_unlimit` = '$time_unlimit'";
+    }
+    
+    if($meal!=null){
+        $set_str .= "`meal` = '$meal'";
+    }
+    
+    if($classical!=null){
+        $set_str .= "`classical` = '$classical'";
+    }
+    
+    if($remark!=null){
+        $set_str .= "`remark` = '$remark'";
+    }
+    
+
+    if($img_src!=null){
+        $set_str .= "`img_src` = '$img_src'";
+    }
+
+
+    $sql .= $set_str;
+    $sql .= $where_str;
+    
+    return $sql;
+}
+
 function count_all_cafe(){
     $sql = "SELECT count(*) FROM `cafe` where 1";
     $result = mysql_query($sql);
@@ -302,6 +396,11 @@ function add_product($name, $species, $format, $characteristic, $price, $type, $
 
 function delete_product($name){
     $sql = "DELETE FROM `product` WHERE `name` = '$name'";
+    return $sql;
+}
+
+function delete_cafe($name){
+    $sql = "DELETE FROM `cafe` WHERE `cafe_name` = '$name'";
     return $sql;
 }
 

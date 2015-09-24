@@ -13,6 +13,7 @@ while($row = mysql_fetch_row($result)){
 ?>
 
 <table border="1">
+   <tr> <td>刪除產品資料</td><td>修改產品資料</td> <td>產品名字</td> <td>種類</td> <td>規格</td> <td>特性</td> <td>價格</td> <td>樣式</td> <td>圖片位置</td> </tr>
     <tr>
         <?php 
         for($x=0;$x<count($row);$x++){
